@@ -23,7 +23,11 @@
 
 - (void)setupAsGreenButton;
 - (void)setupAsRedButton;
+- (void)setupAsLightGrayButton;
+- (void)setupAsDarkGrayButton;
 - (void)setupAsSmallGreenButton;
 - (void)setupAsSmallRedButton;
+- (void)setupAsSmallLightGrayButton;
+- (void)setupAsSmallDarkGrayButton;
 
 @end

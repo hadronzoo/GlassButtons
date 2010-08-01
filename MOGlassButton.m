@@ -79,7 +79,8 @@
 	[self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 	[self setTitleColor:MO_RGBCOLOR(205, 212, 220) forState:UIControlStateDisabled];
 	self.titleLabel.shadowOffset = CGSizeMake(0, -1);
-	self.titleLabel.shadowColor = MO_RGBCOLOR(192, 73, 84);
+	//self.titleLabel.shadowColor = MO_RGBCOLOR(192, 73, 84);
+	self.titleLabel.shadowColor = MO_RGBACOLOR(0, 0, 0, 0.5);
 	self.titleLabel.font = [UIFont boldSystemFontOfSize:20];
 }
 
@@ -87,7 +88,7 @@
 - (void)setupAsGreenButton {
 	[self setBackgroundColor:MO_RGBCOLOR(24, 157, 22) forState:UIControlStateNormal];
 	[self setBackgroundColor:MO_RGBCOLOR(9, 54, 14) forState:UIControlStateHighlighted];
-	[self setBackgroundColor:MO_RGBCOLOR(24, 157, 22) forState:UIControlStateDisabled];
+	[self setBackgroundColor:MO_RGBACOLOR(24, 157, 22, 0.5) forState:UIControlStateDisabled];
 	[self setupForStandardButtons];
 }
 
@@ -95,10 +96,23 @@
 - (void)setupAsRedButton {
 	[self setBackgroundColor:MO_RGBCOLOR(160, 1, 20) forState:UIControlStateNormal];
 	[self setBackgroundColor:MO_RGBCOLOR(120, 0, 0) forState:UIControlStateHighlighted];
-	[self setBackgroundColor:MO_RGBCOLOR(160, 1, 20) forState:UIControlStateDisabled];
+	[self setBackgroundColor:MO_RGBACOLOR(160, 1, 20, 0.5) forState:UIControlStateDisabled];
 	[self setupForStandardButtons];
 }
 
+- (void)setupAsLightGrayButton {
+	[self setBackgroundColor:MO_RGBCOLOR(200, 200, 200) forState:UIControlStateNormal];
+	[self setBackgroundColor:MO_RGBCOLOR(160, 160, 160) forState:UIControlStateHighlighted];
+	[self setBackgroundColor:MO_RGBACOLOR(200, 200, 200, 0.5) forState:UIControlStateDisabled];
+	[self setupForStandardButtons];
+}
+
+- (void)setupAsDarkGrayButton {
+	[self setBackgroundColor:MO_RGBCOLOR(75, 75, 75) forState:UIControlStateNormal];
+	[self setBackgroundColor:MO_RGBCOLOR(115, 115, 115) forState:UIControlStateHighlighted];
+	[self setBackgroundColor:MO_RGBACOLOR(75, 75, 75, 0.5) forState:UIControlStateDisabled];
+	[self setupForStandardButtons];
+}
 
 - (void)setupAsSmallGreenButton {
 	[self setupAsGreenButton];
@@ -109,6 +123,18 @@
 
 - (void)setupAsSmallRedButton {
 	[self setupAsRedButton];
+	self.titleLabel.font = [UIFont boldSystemFontOfSize:15];
+	self.layer.cornerRadius = 4.0f;
+}
+
+- (void)setupAsSmallLightGrayButton {
+	[self setupAsLightGrayButton];
+	self.titleLabel.font = [UIFont boldSystemFontOfSize:15];
+	self.layer.cornerRadius = 4.0f;
+}
+
+- (void)setupAsSmallDarkGrayButton {
+	[self setupAsDarkGrayButton];
 	self.titleLabel.font = [UIFont boldSystemFontOfSize:15];
 	self.layer.cornerRadius = 4.0f;
 }
